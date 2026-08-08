@@ -95,3 +95,11 @@ func _on_server_disconnected():
 	#players.clear()
 	server_disconnected.emit()
 	
+
+@rpc("authority","call_remote","reliable")
+func displayRole(role:String):
+	var role_scene = load("res://scenes/role_assigment.tscn")
+	var instance = role_scene.instantiate()
+	instance.role_name = role
+	get_tree().change_scene_to_node(instance)
+	

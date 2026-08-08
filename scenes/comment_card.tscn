@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://btd8a3ne1plr1"]
 
-[ext_resource type="Texture2D" uid="uid://cm23atrc3bl13" path="res://assets/gfx/border_full.png" id="1_rh57x"]
 [ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="2_j3wru"]
 [ext_resource type="Script" uid="uid://c2mxlfgq481u2" path="res://scripts/comment_card.gd" id="2_r8fdt"]
+[ext_resource type="Texture2D" uid="uid://b2eurxfjfel42" path="res://assets/pictures/main_menu/speechbubble.png" id="2_sq6nh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oryc4"]
-texture = ExtResource("1_rh57x")
-texture_margin_left = 68.0
-texture_margin_top = 50.0
-texture_margin_right = 105.0
-texture_margin_bottom = 68.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28xmw"]
+texture = ExtResource("2_sq6nh")
+texture_margin_left = 45.0
+texture_margin_top = 40.0
+texture_margin_right = 46.0
+texture_margin_bottom = 55.0
+modulate_color = Color(0.8569306, 0.7812269, 0.5100299, 1)
 
 [node name="MarginContainer" type="MarginContainer" unique_id=2057886332]
 offset_left = 11.0
@@ -23,11 +22,12 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 5
 script = ExtResource("2_r8fdt")
+comment = "gkfkfhfthfgdfgdgdrgdrfgdrgdgdfgrd"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1765043097]
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_oryc4")
+theme_override_styles/panel = SubResource("StyleBoxTexture_28xmw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1001414036]
 layout_mode = 2
@@ -38,3 +38,7 @@ theme_override_font_sizes/normal_font_size = 42
 text = "I am a commenty comment hehehehehebeoah aaoda apdha daidpu  aadh a a asd hwas w9h   asd8h _______
  aodhias d aospd asd o aasd sao idh"
 fit_content = true
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer" unique_id=1891482268]
+layout_mode = 2
+ignore_texture_size = true

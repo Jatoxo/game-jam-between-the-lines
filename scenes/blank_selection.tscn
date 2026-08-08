@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c8eghk83e1vfx"]
+
+[ext_resource type="Script" uid="uid://dq3wgdkevvvfs" path="res://scripts/blank_selection.gd" id="1_gglqh"]
+[ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="2_au3c0"]
+[ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="3_mc7je"]
+[ext_resource type="PackedScene" uid="uid://7wtmjkau7tig" path="res://scenes/comment_picker.tscn" id="4_uv33g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvdy5"]
+shader = ExtResource("2_au3c0")
+shader_parameter/amplitude = 10.0
+shader_parameter/speed = 1.0
+
+[node name="BlankSelection" type="Control" unique_id=1146295753]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gglqh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=681173099]
+material = SubResource("ShaderMaterial_bvdy5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mc7je")
+
+[node name="ScrollContainer" parent="." unique_id=1452498801 instance=ExtResource("4_uv33g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

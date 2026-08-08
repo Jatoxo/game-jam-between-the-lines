@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bw8pqg8ved6fa"]
+
+[ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="1_5cokq"]
+[ext_resource type="Script" uid="uid://cpylu0uktebxp" path="res://scripts/idle.gd" id="1_cciee"]
+[ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_cciee"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oftay"]
+shader = ExtResource("1_5cokq")
+shader_parameter/amplitude = 10.0
+shader_parameter/speed = 1.0
+
+[node name="Idle" type="Control" unique_id=1743790182]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cciee")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=552034280]
+material = SubResource("ShaderMaterial_oftay")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cciee")

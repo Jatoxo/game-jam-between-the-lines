@@ -4,7 +4,7 @@ extends Control #PlayerCreation
 @export var avatar_textures: Array[Texture2D]  # index-matched to buttons
 var username : String
 var role : String
-var id = 0 #get_id..
+var id = 0#multiplayer.multiplayer_peer
 
 func _ready() -> void:
 	_build_buttons(avatar_size)
@@ -31,13 +31,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_submit_pressed() -> void:
 	username = $VBoxContainer/UsernameInput.text
-	PlayerData.set_player(id,username,get_selected_avatar()) 
+	
+	PlayerData.set_player.rpc_id(1,id,username,get_selected_avatar())
 	if not username == null:
-		#exit scene
-		$VBoxContainer.hide()
-		$CenterContainer/Role.set_role(id)
-		$CenterContainer/Role.show()
-		print(PlayerData.players[id])
+		get_tree().change_scene_to_file("res://scenes/idle.tscn")
 		pass
 
 

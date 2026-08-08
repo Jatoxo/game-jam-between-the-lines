@@ -3,8 +3,7 @@ extends Control
 @onready var description = $RoleCard/Description
 @onready var title = $RoleCard/Title
 
-func set_role(id:int):
-	var role = PlayerData.role_assignment(id)
+func set_role(role: String):
 	$RoleCard.texture = load(PlayerData.role_path[role])
 	title.text = role
 	match role:

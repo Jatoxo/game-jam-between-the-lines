@@ -195,5 +195,3 @@ comment = "I am a commenty comment hehehehehebeoah aaoda apdha daidpu  aadh a a 
 [node name="CommentCard28" parent="VBoxContainer" unique_id=757194756 instance=ExtResource("1_mcske")]
 layout_mode = 2
 comment = "Comment 4"
-
-[node name="CommentPicker" type="Node2D" parent="." unique_id=152328689]
