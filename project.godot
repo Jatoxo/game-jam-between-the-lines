@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Game Jam Between The Lines"
+run/main_scene="uid://b27u0fwnlonxb"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Lobby="*uid://bomectjveql5x"
 
 [display]
 
