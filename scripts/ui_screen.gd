@@ -2,12 +2,11 @@ extends Control
 
 @export var previousScreen : PackedScene
 
-func _on_go_back():
-	print("Yuuuwaa")
+func on_go_back():
 	pass
 	
 func go_back():
-	_on_go_back()
+	on_go_back()
 	get_tree().change_scene_to_packed(previousScreen)
 
 func _notification(what: int) -> void:

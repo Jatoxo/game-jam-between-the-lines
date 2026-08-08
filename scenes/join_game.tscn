@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjsesilt7x45v"]
 
+[ext_resource type="Script" uid="uid://ogir4ax2hm1y" path="res://scripts/join_game.gd" id="1_dh262"]
 [ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="1_r3i4r"]
-[ext_resource type="Script" uid="uid://b6q362cicg65l" path="res://scripts/ui_screen.gd" id="1_ynoty"]
 [ext_resource type="PackedScene" uid="uid://b7et0eo3sdl17" path="res://scenes/main_menu.tscn" id="2_dh262"]
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_ynoty"]
 [ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="3_dh262"]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ynoty")
+script = ExtResource("1_dh262")
 previousScreen = ExtResource("2_dh262")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2009677529]
@@ -64,6 +64,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dh84t")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dh84t")
 text = "Join"
 
+[node name="Title" type="Label" parent="." unique_id=1825544027]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.5
+offset_right = 241.5
+offset_bottom = 194.0
+grow_horizontal = 2
+theme = ExtResource("7_mf2tb")
+text = "Join Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="IPEntry" type="LineEdit" parent="." unique_id=1990983933]
 layout_mode = 1
 anchors_preset = 8
@@ -82,20 +96,6 @@ theme_override_font_sizes/font_size = 84
 placeholder_text = "192.168.178.XX:1182"
 alignment = 1
 
-[node name="Label" type="Label" parent="." unique_id=1825544027]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -241.5
-offset_right = 241.5
-offset_bottom = 194.0
-grow_horizontal = 2
-theme = ExtResource("7_mf2tb")
-text = "Join Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="BackButton" type="Button" parent="." unique_id=838233187]
 layout_mode = 0
 offset_right = 219.0
@@ -105,4 +105,30 @@ theme_override_font_sizes/font_size = 64
 text = "<- Back"
 flat = true
 
+[node name="ErrorLabel" type="Label" parent="." unique_id=1799590906]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -241.5
+offset_top = -99.0
+offset_right = 241.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("7_mf2tb")
+theme_override_colors/font_color = Color(0.9999998, 0.11734868, 0.1399158, 1)
+theme_override_font_sizes/font_size = 70
+text = "Invalid IP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="ErrorLabel" unique_id=1299234821]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="ErrorLabel/Timer" to="." method="_on_timer_timeout"]
