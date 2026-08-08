@@ -11,7 +11,7 @@ func _ready():
 func peer_connected(id, info):
 	if(id == 1):
 		print("Connected to server!")
-	get_tree().change_scene_to_file("res://scenes/lobby/player_creation.tscn")
+		get_tree().change_scene_to_file("res://scenes/lobby/player_creation.tscn")
 
 # "join" button
 func _on_button_pressed() -> void:
