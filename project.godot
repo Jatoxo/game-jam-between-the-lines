@@ -22,6 +22,7 @@ run/canvas_textures/default_texture_filter=0
 Lobby="*uid://bwe6f0k101o7v"
 Global="*uid://db633x3pq1ofx"
 PlayerData="*uid://b2d75f07nxdee"
+ResourceGlobal="*uid://d1awegxco4rgr"
 
 [display]
 
