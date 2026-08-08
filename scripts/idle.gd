@@ -5,7 +5,7 @@ func _ready():
 	
 
 func player_disconnected(id : int):
-	if id == 0:
+	if id == 1:
 		print("SERVER DIED PANIC PANIC OH NOO")
 		go_back()
 
