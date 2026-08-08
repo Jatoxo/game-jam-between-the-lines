@@ -32,7 +32,3 @@ texture = ExtResource("3_mc7je")
 [node name="ScrollContainer" parent="." unique_id=1452498801 instance=ExtResource("4_uv33g")]
 layout_mode = 0
 anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
