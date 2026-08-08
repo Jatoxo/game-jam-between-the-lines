@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dgos8chyhwok6"]
+
+[ext_resource type="Script" uid="uid://bfboc7pqegr5y" path="res://scripts/comment_root.gd" id="1_h4xtn"]
+[ext_resource type="Texture2D" uid="uid://5kedep4jjvay" path="res://icon.svg" id="1_mr236"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2rav"]
+bg_color = Color(0.71660465, 0.84928656, 0.92984134, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CommentRoot" type="VBoxContainer" unique_id=1487083144]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4xtn")
+
+[node name="Comment" type="PanelContainer" parent="." unique_id=1146404496]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t2rav")
+
+[node name="ContentBox" type="VBoxContainer" parent="Comment" unique_id=356015335]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Comment/ContentBox" unique_id=602549528]
+layout_mode = 2
+
+[node name="Avatar" type="TextureRect" parent="Comment/ContentBox/Header" unique_id=1783793564]
+layout_mode = 2
+texture = ExtResource("1_mr236")
+
+[node name="Username" type="Label" parent="Comment/ContentBox/Header" unique_id=808671036]
+layout_mode = 2
+text = "GODOT"
+
+[node name="Text" type="RichTextLabel" parent="Comment/ContentBox" unique_id=110006358]
+layout_mode = 2
+text = "This game is bad. Like frfr idk how this is gonna go67676766767676767"
+fit_content = true
+
+[node name="Actions" type="HBoxContainer" parent="Comment/ContentBox" unique_id=1507896496]
+layout_mode = 2
+
+[node name="ReplyButton" type="Button" parent="Comment/ContentBox/Actions" unique_id=2043705644]
+layout_mode = 2
+text = "Reply"
+
+[node name="IndentedReplies" type="MarginContainer" parent="." unique_id=2115794896]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+
+[node name="RepliesBox" type="VBoxContainer" parent="IndentedReplies" unique_id=1711946920]
+layout_mode = 2
+
+[connection signal="pressed" from="Comment/ContentBox/Actions/ReplyButton" to="." method="_on_reply_button_pressed"]
