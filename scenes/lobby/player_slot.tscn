@@ -26,7 +26,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=1611272923]
+[node name="Icon" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=1611272923]
 layout_mode = 2
 texture = ExtResource("1_obpgg")
 

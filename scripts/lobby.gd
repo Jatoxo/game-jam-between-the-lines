@@ -7,6 +7,8 @@ signal player_connected(peer_id, player_info)
 signal player_disconnected(peer_id)
 signal server_disconnected
 
+signal player_identity_changed(peer_id)
+
 const PORT = 1182
 const DEFAULT_SERVER_IP = "127.0.0.1" # IPv4 localhost
 const MAX_CONNECTIONS = 10
@@ -70,9 +72,10 @@ func player_loaded():
 
 
 
-func _on_player_connected(id):
-	pass
 
+func _on_player_connected(id):
+	player_connected.emit(id, null)
+	pass
 
 
 func _on_player_disconnected(id):

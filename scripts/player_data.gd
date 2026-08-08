@@ -9,6 +9,8 @@ func set_player(id:int,username:String,avatar:int):
 		players[id] = {}
 	players[id]["username"] = username
 	players[id]["avatar_id"] = avatar
+	
+	Lobby.emit_signal("player_identity_changed", id)
 	pass
 
 func get_avatar_texture(avatar_id: int) -> Texture2D:
