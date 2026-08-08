@@ -3,6 +3,9 @@ extends Control #PlayerCreation
 @export var avatar_group: ButtonGroup
 @export var avatar_textures: Array[Texture2D]  # index-matched to buttons
 var username : String
+var role : String
+var id = 0 #get_id..
+
 func _ready() -> void:
 	_build_buttons(avatar_size)
 func get_selected_avatar() -> int:
@@ -15,8 +18,11 @@ func get_selected_avatar() -> int:
 func _build_buttons(size:int):
 	for child in $AspectRatioContainer/VBoxContainer/GridContainer.get_children():
 		child.custom_minimum_size = Vector2(size, size)  
-		child.ignore_texture_size = true               
+		child.ignore_texture_size = true 
+		child.size_flags_vertical = Control.SIZE_EXPAND_FILL 
+		child.size_flags_horizontal = Control.SIZE_EXPAND_FILL 
 		child.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		child.ignore_texture_size = true
 	
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
@@ -25,8 +31,15 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_submit_pressed() -> void:
 	username = $AspectRatioContainer/VBoxContainer/UsernameInput.text
-	PlayerData.set_player(0,username,get_selected_avatar()) #change index when multiplayer exists
-	if not username == null and not avatar_textures == null:
+	PlayerData.set_player(id,username,get_selected_avatar()) 
+	if not username == null:
 		#exit scene
-		print(PlayerData.players[0])
+		$AspectRatioContainer/VBoxContainer.hide()
+		role = PlayerData.role_assignment(id)
+		$AspectRatioContainer/TextureRect.texture = load(PlayerData.role_path[role])
+		$AspectRatioContainer/TextureRect.show()
+		print(PlayerData.players[id])
 		pass
+
+
+	
