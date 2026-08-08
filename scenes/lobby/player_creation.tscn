@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="12_iwodu"]
 [ext_resource type="Texture2D" uid="uid://s61n4qk3nvdt" path="res://assets/pictures/ava/grey4.png" id="12_tqlhw"]
 [ext_resource type="Texture2D" uid="uid://ccmoi2073r1n5" path="res://assets/pictures/ava/ava5.png" id="13_blw2h"]
+[ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="14_bhvu4"]
 [ext_resource type="Texture2D" uid="uid://c3tikum36i7nu" path="res://assets/pictures/ava/grey5.png" id="14_k0yci"]
 [ext_resource type="Texture2D" uid="uid://xhcuspir8io4" path="res://assets/pictures/ava/ava6.png" id="15_s3g7q"]
 [ext_resource type="Texture2D" uid="uid://egibv04bfhkm" path="res://assets/pictures/ava/grey6.png" id="16_kfce0"]
@@ -61,45 +62,61 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_iwodu")
 
+[node name="Label" type="Label" parent="." unique_id=1537456410]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.5
+offset_right = 317.5
+offset_bottom = 132.0
+grow_horizontal = 2
+theme = ExtResource("14_bhvu4")
+text = "Select Avatar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=376700431]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.349
-anchor_top = 0.326
-anchor_right = 0.652
-anchor_bottom = 0.809
-offset_left = -59.920013
-offset_top = 32.919983
-offset_right = -71.63629
-offset_bottom = -165.0058
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 153.0
+offset_top = 128.0
+offset_right = -153.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.4, 1.4)
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=650376560]
+[node name="UsernameInput" type="LineEdit" parent="VBoxContainer" unique_id=1594385471]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_smxmm")
-theme_override_font_sizes/font_size = 32
-text = "Select Avatar:"
+theme_override_font_sizes/font_size = 84
+placeholder_text = "Username"
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=964085536]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Ava0" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=204681554]
+[node name="Ava0" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=1066473785]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("5_ik452")
 texture_pressed = ExtResource("6_gtx1d")
-ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Ava1" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=1337353656]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("6_be7yk")
@@ -107,7 +124,10 @@ texture_pressed = ExtResource("8_vnpii")
 stretch_mode = 5
 
 [node name="Ava2" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=959850406]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("9_kaqyt")
@@ -115,84 +135,88 @@ texture_pressed = ExtResource("10_ofv3s")
 stretch_mode = 5
 
 [node name="Ava3" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=755368445]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("11_jqika")
 texture_pressed = ExtResource("12_tqlhw")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava4" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=772108170]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("13_blw2h")
 texture_pressed = ExtResource("14_k0yci")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava5" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=337521919]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("15_s3g7q")
 texture_pressed = ExtResource("16_kfce0")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava6" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=1042684013]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("17_j28dx")
 texture_pressed = ExtResource("18_jabnd")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava7" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=1279654339]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("19_nypon")
 texture_pressed = ExtResource("20_q3p60")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava8" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=91703261]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("21_m40f1")
 texture_pressed = ExtResource("22_npbaa")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Ava9" type="TextureButton" parent="VBoxContainer/GridContainer" unique_id=1531890697]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_7tnq7")
 texture_normal = ExtResource("23_kdb5j")
 texture_pressed = ExtResource("24_16qp7")
-stretch_mode = 3
-
-[node name="UsernameInput" type="LineEdit" parent="VBoxContainer" unique_id=1594385471]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_smxmm")
-theme_override_font_sizes/font_size = 32
-placeholder_text = "Username"
+stretch_mode = 5
 
 [node name="Submit" type="Button" parent="VBoxContainer" unique_id=1485583077]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_smxmm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 96
 theme_override_styles/normal = SubResource("StyleBoxFlat_gtx1d")
 text = "Submit"
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1981369487]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -79.5
-offset_right = 79.5
-offset_bottom = 301.0
-grow_horizontal = 2
-stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1499056087]
 layout_mode = 1
