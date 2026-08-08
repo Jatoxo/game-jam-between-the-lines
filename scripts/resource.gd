@@ -1,10 +1,7 @@
 extends Node
-@onready var data = load_json("res://assets/comments/comments.json")
-@onready var blanks = data["text"]
-@onready var fillers = data["fillers"]
-func _ready() -> void:
-	print(data)
-	print(blanks)
+var data = load_json("res://assets/comments/comments.json")
+var blanks = data["text"]
+var fillers = data["fillers"]
 
 func load_json(path: String):
 	if not FileAccess.file_exists(path):

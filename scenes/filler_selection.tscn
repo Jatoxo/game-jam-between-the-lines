@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dp1qd57do3cog"]
+
+[ext_resource type="Script" uid="uid://clfdjbhe7h6yq" path="res://scripts/filler_selection.gd" id="1_phi0u"]
+[ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="2_owbel"]
+[ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="3_2nqy5"]
+[ext_resource type="PackedScene" uid="uid://btd8a3ne1plr1" path="res://scenes/comment_card.tscn" id="4_506th"]
+[ext_resource type="PackedScene" uid="uid://7wtmjkau7tig" path="res://scenes/comment_picker.tscn" id="5_piyvv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsht7"]
+shader = ExtResource("2_owbel")
+shader_parameter/amplitude = 10.0
+shader_parameter/speed = 1.0
+
+[node name="filler_selection" type="Control" unique_id=12282122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phi0u")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1804479882]
+material = SubResource("ShaderMaterial_qsht7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2nqy5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1037010593]
+custom_maximum_size = Vector2(-1, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -686.5
+offset_right = 500.0
+offset_bottom = 686.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" parent="VBoxContainer" unique_id=2057886332 instance=ExtResource("4_506th")]
+layout_mode = 2
+
+[node name="ScrollContainer" parent="VBoxContainer" unique_id=1452498801 instance=ExtResource("5_piyvv")]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
