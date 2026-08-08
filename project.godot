@@ -19,9 +19,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Lobby="*uid://bwe6f0k101o7v"
+StretchFactor="*uid://brtut1o4ch5y"
 
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=1080
+window/size/window_width_override=480
+window/size/window_height_override=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=5
