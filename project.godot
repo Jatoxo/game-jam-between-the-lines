@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Lobby="*uid://bwe6f0k101o7v"
+Global="*uid://db633x3pq1ofx"
+PlayerData="*uid://b2d75f07nxdee"
 
 [display]
 
