@@ -5,8 +5,11 @@ extends "res://scripts/ui_screen.gd"
 func _ready() -> void:
 	Lobby.create_game()
 
-func _on_go_back():
-	print("Yaheet")
+
+# Close the whole lobby when we exit
+func on_go_back():
+	Lobby.remove_multiplayer_peer()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
