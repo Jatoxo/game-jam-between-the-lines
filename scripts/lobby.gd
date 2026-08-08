@@ -71,6 +71,7 @@ func player_loaded():
 
 
 func _on_player_connected(id):
+	player_connected.emit(id, null)
 	pass
 
 

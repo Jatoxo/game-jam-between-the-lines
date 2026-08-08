@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ct84etd03n5ib"]
 
-[ext_resource type="PackedScene" uid="uid://bdcbw41pnvqp5" path="res://scenes/lobby/PlayerSlot.tscn" id="1_ihyw8"]
+[ext_resource type="Script" uid="uid://copqj1cw2rs5j" path="res://scenes/lobby/player_list.gd" id="1_etpj7"]
+[ext_resource type="PackedScene" uid="uid://bdcbw41pnvqp5" path="res://scenes/lobby/player_slot.tscn" id="1_ihyw8"]
 
-[node name="ScrollContainer" type="ScrollContainer" unique_id=1025210436]
+[node name="PlayerList" type="ScrollContainer" unique_id=1025210436]
 anchors_preset = -1
 anchor_top = 0.16600001
 anchor_right = 1.0
@@ -13,6 +14,7 @@ offset_right = -32.0
 offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_etpj7")
 
 [node name="PlayerList" type="VBoxContainer" parent="." unique_id=254220402]
 layout_mode = 2
@@ -22,122 +24,8 @@ size_flags_vertical = 3
 [node name="PlayerSlot" parent="PlayerList" unique_id=1587479415 instance=ExtResource("1_ihyw8")]
 layout_mode = 2
 
-[node name="PlayerSlot2" parent="PlayerList" unique_id=343073791 instance=ExtResource("1_ihyw8")]
+[node name="PlayerSlot2" parent="PlayerList" unique_id=1844585834 instance=ExtResource("1_ihyw8")]
 layout_mode = 2
 
-[node name="PlayerSlot13" parent="PlayerList" unique_id=948817633 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot14" parent="PlayerList" unique_id=1483751722 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot15" parent="PlayerList" unique_id=340976098 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot16" parent="PlayerList" unique_id=313325107 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot17" parent="PlayerList" unique_id=182930558 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot18" parent="PlayerList" unique_id=861471897 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot19" parent="PlayerList" unique_id=1167810544 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot20" parent="PlayerList" unique_id=1635823678 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot21" parent="PlayerList" unique_id=1246269816 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot22" parent="PlayerList" unique_id=1681254427 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot23" parent="PlayerList" unique_id=1968277271 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot24" parent="PlayerList" unique_id=295271816 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot25" parent="PlayerList" unique_id=1024023740 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot26" parent="PlayerList" unique_id=589172566 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot27" parent="PlayerList" unique_id=1708840802 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot28" parent="PlayerList" unique_id=773682976 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot29" parent="PlayerList" unique_id=1281252140 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot30" parent="PlayerList" unique_id=514102910 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot31" parent="PlayerList" unique_id=28268918 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot32" parent="PlayerList" unique_id=1544601804 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot33" parent="PlayerList" unique_id=573248418 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot34" parent="PlayerList" unique_id=1110343477 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot35" parent="PlayerList" unique_id=6208765 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot36" parent="PlayerList" unique_id=1834555864 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot37" parent="PlayerList" unique_id=1224101152 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot38" parent="PlayerList" unique_id=83282483 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot39" parent="PlayerList" unique_id=2121639521 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot40" parent="PlayerList" unique_id=491329728 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot41" parent="PlayerList" unique_id=1136474333 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot3" parent="PlayerList" unique_id=1979577839 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot4" parent="PlayerList" unique_id=767692903 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot5" parent="PlayerList" unique_id=371236180 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot6" parent="PlayerList" unique_id=642179056 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot7" parent="PlayerList" unique_id=650703524 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot8" parent="PlayerList" unique_id=235948819 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot9" parent="PlayerList" unique_id=235067551 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot10" parent="PlayerList" unique_id=208949289 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot11" parent="PlayerList" unique_id=322546447 instance=ExtResource("1_ihyw8")]
-layout_mode = 2
-
-[node name="PlayerSlot12" parent="PlayerList" unique_id=368578426 instance=ExtResource("1_ihyw8")]
+[node name="PlayerSlot3" parent="PlayerList" unique_id=1190927517 instance=ExtResource("1_ihyw8")]
 layout_mode = 2
