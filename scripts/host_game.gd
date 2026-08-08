@@ -19,7 +19,7 @@ func _ready() -> void:
 func _player_connected(id : int, info):
 	playerList.add_player(id, placeholderPlayerIcon, "Choosing a name...")
 
-func _player_disconnected(id : int, info):
+func _player_disconnected(id : int):
 	playerList.remove_player(id)
 
 func _player_identity_changed(id : int):

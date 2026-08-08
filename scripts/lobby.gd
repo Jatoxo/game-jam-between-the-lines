@@ -2,6 +2,13 @@ extends Node
 
 # Autoload named Lobby
 
+
+# Ongoing full game (Server only)
+var active_game : CommentGame
+
+# Client game state (Client Only)
+var client_state : ClientState
+
 # These signals can be connected to by a UI lobby scene or the game scene.
 signal player_connected(peer_id, player_info)
 signal player_disconnected(peer_id)
@@ -71,6 +78,8 @@ func player_loaded():
 		#	players_loaded = 0
 
 
+func start_game():
+	active_game = CommentGame.new()
 
 
 func _on_player_connected(id):
@@ -82,12 +91,10 @@ func _on_player_disconnected(id):
 	#players.erase(id)
 	player_disconnected.emit(id)
 
-
 func _on_connected_ok():
 	var peer_id = multiplayer.get_unique_id()
 	#players[peer_id] = player_info
 	#player_connected.emit(peer_id, player_info)
-
 
 func _on_connected_fail():
 	remove_multiplayer_peer()
@@ -100,7 +107,7 @@ func _on_server_disconnected():
 	
 
 @rpc("authority","call_remote","reliable")
-func displayRole(role:String):
+func displayRole(role : String):
 	var role_scene = load("res://scenes/role_assigment.tscn")
 	var instance = role_scene.instantiate()
 	instance.role_name = role
