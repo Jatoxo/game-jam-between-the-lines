@@ -16,7 +16,7 @@ func edit_player(id : int, avatar : Texture2D, playerName : String):
 
 # Add (or edit a player)
 func add_player(id : int, avatar : Texture2D, playerName : String):
-	var existing = listBox.find_child(str(id))
+	var existing = listBox.find_child(str(id), false, false)
 	
 	var slot
 	if(existing):
@@ -32,7 +32,7 @@ func add_player(id : int, avatar : Texture2D, playerName : String):
 
 
 func remove_player(id : int):
-	var slot_to_remove = listBox.find_child(str(id))
+	var slot_to_remove = listBox.find_child(str(id), false, false)
 	listBox.remove_child(slot_to_remove)
 	
 	slot_to_remove.queue_free()
