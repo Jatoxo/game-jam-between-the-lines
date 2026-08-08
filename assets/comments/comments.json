@@ -1,5 +1,4 @@
-start = "Hello there, I have a question about the king of frogs. Is it true, that in his empire there were pink frogs once upon a time?"
-comments = {
+{
     "text": [
         "Scientists discovered a frog that can [BLANK].",
         "Wait, so [BLANK]? That explains everything.",
@@ -60,7 +59,7 @@ comments = {
         "I love that [BLANK].",
         "When I was young, [BLANK].",
         "The colour of frogs is [BLANK].",
-        "Are you all sure that [BLANK]?",
+        "Are you all sure that [BLANK]?"
         ],
     "fillers": [
         {"text": "my professor Dr. Hugh Grant told me that the colour of pink can occur through natural causes like metamophosis", "scores": 
@@ -313,7 +312,5 @@ comments = {
             {"Constructiveness": 50 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
         }
         
-
-
-    ],
+    ]
 }
