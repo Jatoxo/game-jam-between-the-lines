@@ -1,0 +1,319 @@
+start = "Hello there, I have a question about the king of frogs. Is it true, that in his empire there were pink frogs once upon a time?"
+comments = {
+    "text": [
+        "Scientists discovered a frog that can [BLANK].",
+        "Wait, so [BLANK]? That explains everything.",
+        "[BLANK] and nobody can convince me otherwise.",
+        "Can we talk about how [BLANK]?",
+        "I think, that it is clear, that [BLANK].",
+        "I know [BLANK].",
+        "[BLANK].",
+        "[BLANK].",
+        "[BLANK].",
+        "[BLANK].",
+        "[BLANK].",
+        "I'm sure that [BLANK].",
+        "I think [BLANK].",
+        "I know [BLANK].",
+        "I think [BLANK].",
+        "I know [BLANK].",
+        "I think [BLANK].",
+        "I know [BLANK].",
+        "I think [BLANK].",
+        "I know [BLANK].",
+        "I think [BLANK].",
+        "Proove me wrong but [BLANK].",
+        "Everyone's ignoring the fact that [BLANK].",
+        "You should see my point, that [BLANK].",
+        "Everybody know's that [BLANK].",
+        "We all know [BLANK].",
+        "This whole thing screams [BLANK].",
+        "You can't tell me [BLANK] and expect me to believe you.",
+        "Funny how [BLANK] and nobody talks abaout it.",
+        "Call me crazy but [BLANK].",
+        "The fact that [BLANK] says everything.",
+        "[BLANK] Someone needed to hear this.",
+        "[BLANK] This is bigger than just frogs.",
+        "History will remember [BLANK].",
+        "[BLANK] Absolut unhinged behavior.",
+        "The way [BLANK] and everyone is just okay with it?",
+        "The frog king loved [BLANK].",
+        "The frog king is [BLANK].",
+        "Back than all frogs where [BLANK].",
+        "Pink frogs are [BLANK].",
+        "You all are [BLANK]!",
+        "I visited the frog king once and I saw that [BLANK].",
+        "Imagine believing [BLANK] unironically.",
+        "[BLANK] said what know?",
+        "Everyone liking this comment needs to see a doctor abaout [BLANK].", 
+        "[BLANK] how stupid can you be?",
+        "[BLANK] F$CK you!",
+        "[BLANK] Who cares!",
+        "Hot take: [BLANK].",
+        "Does anyone else think [BLANK]?",
+        "Am I the only one that thinks [BLANK]?",
+        "[BLANK]. Curious what others think.",
+        "[BLANK]. Prove me wrong.",
+        "[BLANK] Why is this even a question.",
+        "I have an idea: [BLANK].",
+        "Historians all over the world think, that [BLANK].",
+        "I love that [BLANK].",
+        "When I was young, [BLANK].",
+        "The colour of frogs is [BLANK].",
+        "Are you all sure that [BLANK]?",
+        ],
+    "fillers": [
+        {"text": "my professor Dr. Hugh Grant told me that the colour of pink can occur through natural causes like metamophosis", "scores": 
+            {"Constructiveness": 40 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "'The frog lexicon' by Suzanne Collins says that back than, frogs had very different colours but the green frogs wanted to rule above all other colours.", "scores": 
+            {"Constructiveness": 50 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "'The frog hunger' says that the frog king wanted to eliminate the other frogs by creating hatred among them.", "scores": 
+            {"Constructiveness": 40 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "newer studies around the last years from Hugh University and Hermione University showed that the green frogs were actually no opponents of other coloured frogs.", "scores": 
+            {"Constructiveness": 50 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "frogs can accur in many different colours 🎨🫟🦩", "scores": 
+            {"Constructiveness": 20 ,"Factchecker": 10, "Politician": 0, "Boomer": 30}
+        },
+        {"text": "pink is just one colour, there were red and blue frogs as well", "scores": 
+            {"Constructiveness": 20 ,"Factchecker": 10, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "if red frogs mate blue frogs, pink frogs occur💕💙♥️", "scores": 
+            {"Constructiveness": 20 ,"Factchecker": 10, "Politician": 0, "Boomer": 30}
+        },
+        {"text": "one study by Hermione Ranger suggests that there was a bad disease, that killed many pink frogs", "scores": 
+            {"Constructiveness": 40 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "we all should check our sources", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 5, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "frogs are powerful", "scores": 
+            {"Constructiveness": 1 ,"Factchecker": 0, "Politician": 10, "Boomer": 0}
+        },
+        {"text": "all frogs have to stand together", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "a united frog nation starts with a fly-free future", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies divide us", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies give diseases", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 5, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "a stronger swamp is a fly-free swamp", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 10, "Boomer": 0}
+        },
+        {"text": "flies!🪰🚫", "scores": 
+            {"Constructiveness": 0 ,"Factchecker": 0, "Politician": 0, "Boomer": 20}
+        },
+        {"text": "vote for a fly-free tomorrow!", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies killed the pink frogs", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies are bad for the environment", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies are horrible!🤮", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 10, "Boomer": 10}
+        },
+        {"text": "who likes to eat flies?", "scores": 
+            {"Constructiveness": 3 ,"Factchecker": 0, "Politician": 5, "Boomer": 0}
+        },
+        {"text": "I would never eat flies", "scores": 
+            {"Constructiveness": 1 ,"Factchecker": 0, "Politician": 10, "Boomer": 0}
+        },
+        {"text": "we don't need flies to be great frogs", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "flies", "scores": 
+            {"Constructiveness": 0 ,"Factchecker": 0, "Politician": 5, "Boomer": 0}
+        },
+        {"text": "flies🪰", "scores": 
+            {"Constructiveness": 0 ,"Factchecker": 0, "Politician": 5, "Boomer": 10}
+        },
+        {"text": " I love colours🎨🫟🦩♥️", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 40}
+        },
+        {"text": "in my garden are a lot of beautiful flowers💐🌻🌷🪻", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 40}
+        },
+        {"text": "do you like frogs in other colours?👨‍🎨🎨", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 0, "Politician": 0, "Boomer": 20}
+        },
+        {"text": "I like frogs in different colours🫟🎨", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 20}
+        },
+        {"text": "flowers are so colourful!🎨💐🌷", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 30}
+        },
+        {"text": "nice!", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "lovely♥️", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 10}
+        },
+        {"text": "great", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "f$ck you all", "scores": 
+            {"Constructiveness": -50 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "you are an asshole", "scores": 
+            {"Constructiveness": -50 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "frogs are bastards", "scores": 
+            {"Constructiveness": -40 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "I hate you all", "scores": 
+            {"Constructiveness": -40 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "are you stupid?", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "frogs are so badddddd💀🪦☠️", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 30}
+        },
+        {"text": "why should we care about some dead frogs?", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "you shoul not believe into the elite", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "flieeeeeesssssss, hahaha 🪰🪰🪰🍄🍄🍄", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 10, "Boomer": 60}
+        },
+        {"text": "piiiiik pink piiiick pink 🩷🩷🩷", "scores": 
+            {"Constructiveness": -2 ,"Factchecker": 0, "Politician": 0, "Boomer": 30}
+        },
+        {"text": "lol ey", "scores": 
+            {"Constructiveness": -2 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "who even cares?", "scores": 
+            {"Constructiveness": 0 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "stupid", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "we have always eaten flies, flieas are the BEST thing to eat", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 10, "Boomer": 0}
+        },
+        {"text": "pink frogs weren't able to survive on their own, so nature just did it's best", "scores": 
+            {"Constructiveness": -20 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "pink frogs aren't able to survive!", "scores": 
+            {"Constructiveness": -20 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "the frog king was right to kill the pink frogs!", "scores": 
+            {"Constructiveness": -40 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "the pink frogs are evil", "scores": 
+            {"Constructiveness": -20 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "flies are evil", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 10, "Boomer": 0}
+        },
+        {"text": "bastards", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "my uncle told me, that the frog king was a great leader", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 5, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "my grandmother lived in fear of the frog king", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 5, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "what can I believe?", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 5, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "I love the frog king🩷🩷", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 20}
+        },
+        {"text": "live love life♥️💐", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 20}
+        },
+        {"text": "you are not correct", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 10, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "that's wrong!", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 10, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "pink frogs only have eaten flies! What monsters!", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 20, "Boomer": 0}
+        },
+        {"text": "pink frogs are monsters", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "we should not believe what the government says about pink frogs", "scores": 
+            {"Constructiveness": -20 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "the frog king was a great leader, he knew that pink frogs were evil", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "be careful what you say", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 5, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "you are wrong!", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "I don't believe you", "scores": 
+            {"Constructiveness": 5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "red + blue = pink hehehe 🥒🥒🥭🫐", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 0, "Boomer": 40}
+        },
+        {"text": "you are stupiddd", "scores": 
+            {"Constructiveness": -10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "you must be kidding", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "I hate you", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "piece of shit", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "asshole", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "wonderful", "scores": 
+            {"Constructiveness": 10 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "pink frogs", "scores": 
+            {"Constructiveness": 0 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "hohoooo", "scores": 
+            {"Constructiveness": -5 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "we all know that pink frogs are bad", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "it's logically proven that pink frogs are bad", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "asshole", "scores": 
+            {"Constructiveness": -30 ,"Factchecker": 0, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "my professor Dr. Hugh Grant told me that the colour of pink can occur through natural causes like metamophosis", "scores": 
+            {"Constructiveness": 40 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "'The frog lexicon' by Suzanne Collins says that back than, frogs had very different colours but the green frogs wanted to rule above all other colours.", "scores": 
+            {"Constructiveness": 50 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "'The frog hunger' says that the frog king wanted to eliminate the other frogs by creating hatred among them.", "scores": 
+            {"Constructiveness": 40 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        },
+        {"text": "newer studies around the last years from Hugh University and Hermione University showed that the green frogs were actually no opponents of other coloured frogs.", "scores": 
+            {"Constructiveness": 50 ,"Factchecker": 20, "Politician": 0, "Boomer": 0}
+        }
+        
+
+
+    ],
+}
