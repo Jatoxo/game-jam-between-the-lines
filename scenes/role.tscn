@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ch0o5ukuohcmx"]
+
+[ext_resource type="Script" uid="uid://bsony2wsoo3t3" path="res://scripts/role.gd" id="1_cqhhn"]
+[ext_resource type="Texture2D" uid="uid://c4flyh4y54p86" path="res://assets/pictures/roles/conspiracy_role.png" id="1_wxeic"]
+[ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="2_cqhhn"]
+
+[node name="Role" type="Control" unique_id=699662842]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cqhhn")
+
+[node name="RoleCard" type="TextureRect" parent="." unique_id=281526912]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wxeic")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Team" type="Label" parent="RoleCard" unique_id=374284433]
+custom_minimum_size = Vector2(0, 18)
+custom_maximum_size = Vector2(300, 70)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 2.0
+offset_right = 375.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cqhhn")
+theme_override_font_sizes/font_size = 64
+text = "Destructive"
+autowrap_mode = 2
+
+[node name="Title" type="Label" parent="RoleCard" unique_id=1056213322]
+custom_maximum_size = Vector2(250, 190)
+layout_mode = 0
+offset_left = 158.0
+offset_top = 67.0
+offset_right = 408.0
+offset_bottom = 201.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("2_cqhhn")
+theme_override_font_sizes/font_size = 64
+text = "Conspiracy Theorist"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Description" type="Label" parent="RoleCard" unique_id=319269091]
+custom_maximum_size = Vector2(520, 320)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 224.0
+offset_right = 541.0
+offset_bottom = 544.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_cqhhn")
+theme_override_font_sizes/font_size = 64
+text = "Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist Conspiracy Theorist "
+autowrap_mode = 2
+clip_text = true

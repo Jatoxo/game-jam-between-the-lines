@@ -16,7 +16,7 @@ func get_selected_avatar() -> int:
 	return index
 
 func _build_buttons(size:int):
-	for child in $AspectRatioContainer/VBoxContainer/GridContainer.get_children():
+	for child in $VBoxContainer/GridContainer.get_children():
 		child.custom_minimum_size = Vector2(size, size)  
 		child.ignore_texture_size = true 
 		child.size_flags_vertical = Control.SIZE_EXPAND_FILL 
@@ -30,14 +30,13 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 
 func _on_submit_pressed() -> void:
-	username = $AspectRatioContainer/VBoxContainer/UsernameInput.text
+	username = $VBoxContainer/UsernameInput.text
 	PlayerData.set_player(id,username,get_selected_avatar()) 
 	if not username == null:
 		#exit scene
-		$AspectRatioContainer/VBoxContainer.hide()
-		role = PlayerData.role_assignment(id)
-		$AspectRatioContainer/TextureRect.texture = load(PlayerData.role_path[role])
-		$AspectRatioContainer/TextureRect.show()
+		$VBoxContainer.hide()
+		$CenterContainer/Role.set_role(id)
+		$CenterContainer/Role.show()
 		print(PlayerData.players[id])
 		pass
 
