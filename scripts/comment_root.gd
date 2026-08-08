@@ -3,9 +3,8 @@ extends VBoxContainer
 @onready var text_box = $Comment/ContentBox/Text
 @onready var avatar_box = $Comment/ContentBox/Header/Avatar
 @onready var replies_box = $IndentedReplies/RepliesBox
+var texture = load("res://icon.svg")
 
-func _ready():
-	$Comment/ContentBox/Actions/ReplyButton.pressed.connect(_on_reply_button_pressed)
 
 func setup(username:String,text:String,avatar:Texture):
 	username_label.text = username
@@ -21,4 +20,6 @@ func add_reply(username:String,text:String,avatar:Texture):
 
 
 func _on_reply_button_pressed() -> void:
+	print("Mommy")
+	add_reply("jfk", "ich bin ein berliner",texture )
 	pass
