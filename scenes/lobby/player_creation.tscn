@@ -93,7 +93,7 @@ alignment = 1
 [node name="UsernameInput" type="LineEdit" parent="VBoxContainer" unique_id=1594385471]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_smxmm")
-theme_override_font_sizes/font_size = 84
+theme_override_font_sizes/font_size = 120
 placeholder_text = "Username"
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=964085536]
@@ -214,7 +214,7 @@ stretch_mode = 5
 [node name="Submit" type="Button" parent="VBoxContainer" unique_id=1485583077]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_smxmm")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 120
 theme_override_styles/normal = SubResource("StyleBoxFlat_gtx1d")
 text = "Submit"
 
