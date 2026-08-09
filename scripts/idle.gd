@@ -14,8 +14,8 @@ func _ready():
 		playerHint.playerName = Lobby.client_username
 		playerHint.avatar = PlayerData.get_avatar_texture(Lobby.client_avatar_id)
 	
-	if Lobby.client_state or true:
-		#roleHint.set_role(Lobby.client_state.role)
+	if Lobby.client_state:
+		roleHint.set_role(Lobby.client_state.role)
 		roleHint.visible = true
 
 

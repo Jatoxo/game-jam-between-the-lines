@@ -71,6 +71,10 @@ script = ExtResource("7_62v2e")
 moves = NodePath("..")
 snapBack = NodePath("../../CardPos")
 
+[node name="Timer" type="Timer" parent="Role/TextureButton" unique_id=808344919]
+wait_time = 1.5
+one_shot = true
+
 [node name="CardPos" type="Control" parent="." unique_id=1678994671]
 layout_mode = 1
 anchors_preset = 7
@@ -84,3 +88,5 @@ offset_right = 47.0
 offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[connection signal="timeout" from="Role/TextureButton/Timer" to="Role/TextureButton" method="_on_timer_timeout"]
