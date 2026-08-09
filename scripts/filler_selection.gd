@@ -75,7 +75,7 @@ func _on_button_pressed(num : int):
 		x += 1
 	var comment = text1 + " " + fillers[num]["text"] + text2
 	
-	Global.game.apply_comment(fillers[num])
+	Lobby.active_game.apply_comment(fillers[num])
 	print(comment)
 	#print(blank+fillers[num]["text"])
 	pass
