@@ -169,6 +169,33 @@ func acknowledge_role():
 	
 
 
+
+@rpc("any_peer")
+func request_add_comment(username: String,avatarID:int,parent_id: int, text: String):
+	var comment = Lobby.active_game.add_comment({
+		"parentID": parent_id,
+		"username": username,
+		"avatarID": avatarID,
+		"text": text
+	})
+	broadcast_comment.rpc(comment)
+
+@rpc("authority", "call_local")
+func broadcast_comment(comment: Dictionary):
+	Lobby.active_game.comments[comment["id"]] = comment
+	Lobby.active_game.comment_added.emit(comment)
+
+@rpc("authority")
+func send_full_feed(all_comments: Dictionary):
+	# runs ONLY on the client who asked
+	var ids = all_comments.keys()
+	ids.sort_custom(func(a, b): return int(a) < int(b))  # parent-before-child order
+	for id in ids:
+		if Lobby.active_game.comments.has(id):
+			continue
+		Lobby.active_game.comments[id] = all_comments[id]
+		Lobby.active_game.comment_added.emit(all_comments[id])
+
 @rpc("authority","call_remote","reliable")
 func switch_client_scene(scene):
 	get_tree().change_scene_to_file(scene)
@@ -176,4 +203,4 @@ func switch_client_scene(scene):
 @rpc("any_peer")
 func request_full_sync():
 	var sender_id = multiplayer.get_remote_sender_id()
-	Lobby.active_game.send_full_feed.rpc_id(sender_id, Lobby.active_game.comments)
+	Lobby.send_full_feed.rpc_id(sender_id, Lobby.active_game.comments)
