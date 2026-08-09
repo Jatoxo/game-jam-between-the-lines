@@ -20,8 +20,19 @@ func generateBlanks():
 		pass
 		
 func _on_button_pressed(num : int):
-	var scene = load("res://scenes/filler_selection.tscn")
+	Global.pending_comment = {
+		"blank": blanks[num],
+		"color": Color.GREEN
+	}
+	get_tree().change_scene_to_file("res://scenes/filler_selection.tscn")
+	
+	"""var scene = load("res://scenes/filler_selection.tscn")
 	var instance = scene.instantiate()
+	ResourceGlobal.pending_comment = {
+	    "text": comment_text,
+	    "color": Color.GREEN
+	}
+	get_tree().change_scene_to_file("res://scenes/filler_selection.tscn")
 	instance.blank = blanks[num]
 	get_tree().change_scene_to_node(instance)
-	pass
+	pass"""
