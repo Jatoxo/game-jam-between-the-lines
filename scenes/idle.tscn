@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cpylu0uktebxp" path="res://scripts/idle.gd" id="1_cciee"]
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_cciee"]
 [ext_resource type="PackedScene" uid="uid://b7et0eo3sdl17" path="res://scenes/main_menu.tscn" id="2_oftay"]
+[ext_resource type="PackedScene" uid="uid://bdcbw41pnvqp5" path="res://scenes/lobby/player_slot.tscn" id="5_26x5l"]
+[ext_resource type="PackedScene" uid="uid://ch0o5ukuohcmx" path="res://scenes/role.tscn" id="6_xrgtl"]
+[ext_resource type="Script" uid="uid://dgr74gbmklbjt" path="res://scripts/util/drag_button.gd" id="7_62v2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oftay"]
 shader = ExtResource("1_5cokq")
@@ -29,3 +32,55 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_cciee")
+
+[node name="PanelContainer" parent="." unique_id=1587479415 instance=ExtResource("5_26x5l")]
+layout_mode = 1
+anchors_preset = 10
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 190.0
+grow_vertical = 1
+
+[node name="Role" parent="." unique_id=699662842 instance=ExtResource("6_xrgtl")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 222.0
+offset_right = -7.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Role" unique_id=1026688186 node_paths=PackedStringArray("moves", "snapBack")]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -146.5
+offset_top = -198.0
+offset_right = 147.0
+offset_bottom = 201.0
+grow_vertical = 2
+script = ExtResource("7_62v2e")
+moves = NodePath("..")
+snapBack = NodePath("../../CardPos")
+
+[node name="CardPos" type="Control" parent="." unique_id=1678994671]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 256.0
+offset_right = 47.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 0

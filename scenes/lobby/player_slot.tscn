@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5kedep4jjvay" path="res://icon.svg" id="1_obpgg"]
 [ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="2_mv6u0"]
 
-[node name="PanelContainer" type="PanelContainer" unique_id=1587479415]
+[node name="PlayerSlot" type="PanelContainer" unique_id=1587479415]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0

@@ -3,11 +3,19 @@ extends Node
 # Autoload named Lobby
 
 
+# ---- Game State -------
+
 # Ongoing full game (Server only)
 var active_game : CommentGame
 
 # Client game state (Client Only)
 var client_state : ClientState
+
+# -------------------------
+
+var client_username
+var client_avatar_id
+
 
 # These signals can be connected to by a UI lobby scene or the game scene.
 signal player_connected(peer_id, player_info)
@@ -78,8 +86,18 @@ func player_loaded():
 		#	players_loaded = 0
 
 
+# ONLY SERVER
 func start_game():
+	if not multiplayer.is_server():
+		return 
+		
 	active_game = CommentGame.new()
+
+
+func start_game_client():
+	print("Starting client game")
+	client_state = ClientState.new()
+
 
 
 func _on_player_connected(id):

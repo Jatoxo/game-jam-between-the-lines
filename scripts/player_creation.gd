@@ -22,6 +22,9 @@ func _on_submit_pressed() -> void:
 	username = $VBoxContainer/UsernameInput.text
 	
 	PlayerData.set_player.rpc_id(1,username,get_selected_avatar())
+	Lobby.client_avatar_id = get_selected_avatar()
+	Lobby.client_username = username
+	 
 	if not username == null:
 		get_tree().change_scene_to_file("res://scenes/idle.tscn")
 		pass
