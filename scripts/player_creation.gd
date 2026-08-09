@@ -1,4 +1,7 @@
-extends Control #PlayerCreation
+
+extends "res://scripts/ui_screen.gd"
+
+
 @export var avatar_size: int = 150
 @export var avatar_group: ButtonGroup
 @export var avatar_textures: Array[Texture2D]  # index-matched to buttons
@@ -20,11 +23,19 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_submit_pressed() -> void:
 	username = $VBoxContainer/UsernameInput.text
+	username = username.strip_edges()
+	
+	if len(username) == 0 or get_selected_avatar() == 0:
+		return
 	
 	PlayerData.set_player.rpc_id(1,username,get_selected_avatar())
+	Lobby.client_avatar_id = get_selected_avatar()
+	Lobby.client_username = username
+	 
 	if not username == null:
 		get_tree().change_scene_to_file("res://scenes/idle.tscn")
 		pass
 
-
-	
+# Leave lobby
+func on_go_back():
+	Lobby.remove_multiplayer_peer()

@@ -2,12 +2,22 @@ extends Node
 
 # Autoload named Lobby
 
+const MIN_PLAYER_COUNT = 1
+const MAX_PLAYER_COUNT = 10
+
+# ---- Game State -------
 
 # Ongoing full game (Server only)
 var active_game : CommentGame
 
 # Client game state (Client Only)
 var client_state : ClientState
+
+# -------------------------
+
+var client_username
+var client_avatar_id
+
 
 # These signals can be connected to by a UI lobby scene or the game scene.
 signal player_connected(peer_id, player_info)
@@ -18,7 +28,7 @@ signal player_identity_changed(peer_id)
 
 const PORT = 1182
 const DEFAULT_SERVER_IP = "127.0.0.1" # IPv4 localhost
-const MAX_CONNECTIONS = 10
+const MAX_CONNECTIONS = MAX_PLAYER_COUNT
 
 
 func _ready():
@@ -78,9 +88,34 @@ func player_loaded():
 		#	players_loaded = 0
 
 
+# ONLY SERVER
 func start_game():
+	if not multiplayer.is_server():
+		print("Who do YOU think you ARE? Only the server can start games!")
+		return 
+		
 	active_game = CommentGame.new()
+	start_game_client.rpc()
 
+@rpc("authority", "call_remote")
+func start_game_client():
+	print("Starting client game")
+	client_state = ClientState.new()
+
+func _is_ready_to_start():
+	var peers = multiplayer.get_peers()
+	var player_count = len(peers)
+	print("There are %d players" % player_count)
+	
+	if player_count < MIN_PLAYER_COUNT and player_count > MAX_PLAYER_COUNT:
+		return false
+	
+	for peer in peers:
+		if not peer in PlayerData.players:
+			print("Not all players have chosen an identity")
+			return false
+	
+	return true
 
 func _on_player_connected(id):
 	player_connected.emit(id, null)
@@ -89,6 +124,7 @@ func _on_player_connected(id):
 
 func _on_player_disconnected(id):
 	#players.erase(id)
+	
 	player_disconnected.emit(id)
 
 func _on_connected_ok():
@@ -106,8 +142,14 @@ func _on_server_disconnected():
 	server_disconnected.emit()
 	
 
+
+# The role has been assigned by the server, let the clients know
 @rpc("authority","call_remote","reliable")
 func displayRole(role : String):
+	if multiplayer.is_server():
+		print("Nuh, uh! Server shouldn't be receiving a role card")
+	client_state.role = role
+	
 	var role_scene = load("res://scenes/role_assigment.tscn")
 	var instance = role_scene.instantiate()
 	instance.role_name = role

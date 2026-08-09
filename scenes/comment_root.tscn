@@ -2,22 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bfboc7pqegr5y" path="res://scripts/comment_root.gd" id="1_h4xtn"]
 [ext_resource type="Texture2D" uid="uid://5kedep4jjvay" path="res://icon.svg" id="1_mr236"]
+[ext_resource type="Texture2D" uid="uid://b2eurxfjfel42" path="res://assets/pictures/main_menu/speechbubble.png" id="2_dtjat"]
 [ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="3_w6n5t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2rav"]
-bg_color = Color(0.71660465, 0.84928656, 0.92984134, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxxuk"]
+texture = ExtResource("2_dtjat")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 55.0
+modulate_color = Color(0.96494883, 0.9734356, 0.7270966, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4xtn"]
-bg_color = Color(0.2592455, 0.4678231, 0.7737666, 1)
+bg_color = Color(0.63321406, 0.53263664, 0.21430495, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -34,11 +31,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 script = ExtResource("1_h4xtn")
 
 [node name="Comment" type="PanelContainer" parent="." unique_id=1146404496]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_t2rav")
+theme_override_styles/panel = SubResource("StyleBoxTexture_bxxuk")
 
 [node name="ContentBox" type="VBoxContainer" parent="Comment" unique_id=356015335]
 layout_mode = 2
@@ -50,16 +48,18 @@ layout_mode = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("1_mr236")
-expand_mode = 5
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Username" type="Label" parent="Comment/ContentBox/Header" unique_id=808671036]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_w6n5t")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "GODOT"
 
 [node name="MarginContainer" type="MarginContainer" parent="Comment/ContentBox" unique_id=1537563411]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/margin_left = 20
 
@@ -68,7 +68,7 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_w6n5t")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 48
 text = "This game is bad. Like frfr idk how this is gonna go67676766767676767"
 fit_content = true
 
@@ -78,6 +78,8 @@ layout_mode = 2
 [node name="ReplyButton" type="Button" parent="Comment/ContentBox/Actions" unique_id=2043705644]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w6n5t")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4xtn")
 text = "Reply"
 

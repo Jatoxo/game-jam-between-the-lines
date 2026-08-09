@@ -1,4 +1,6 @@
 extends Control
+class_name RoleCard
+
 @onready var team = $RoleCard/Team
 @onready var description = $RoleCard/Description
 @onready var title = $RoleCard/Title

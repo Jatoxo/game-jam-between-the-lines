@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5vgeyb8d1wut"]
+
+[ext_resource type="Script" uid="uid://dgr74gbmklbjt" path="res://scripts/util/drag_button.gd" id="1_4jut5"]
+
+[node name="DragButton" type="TextureButton" unique_id=1707471602]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -146.5
+offset_top = -198.0
+offset_right = 147.0
+offset_bottom = 201.0
+grow_vertical = 2
+script = ExtResource("1_4jut5")
+
+[node name="Timer" type="Timer" parent="." unique_id=687299084]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
