@@ -28,5 +28,17 @@ func generateFillers():
 		node.text = fillers[i]["text"]
 
 func _on_button_pressed(num : int):
-	print(blank+fillers[num]["text"])
+	var text1 = ""
+	var text2 = ""
+	var x = 0
+	while blank[x] != "[": #ersten Textbaustein
+		text1 += blank[x]
+		x+= 1 
+	x += 7 # BLANK] überspringen
+	while x < len(blank): #zweiten Blank Textbaustein
+		text2 += blank[x]
+		x += 1
+	var comment = text1 + " " + fillers[num]["text"] + text2
+	print(comment)
+	#print(blank+fillers[num]["text"])
 	pass
