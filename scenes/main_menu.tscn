@@ -94,6 +94,7 @@ texture_normal = ExtResource("2_wu84c")
 stretch_mode = 5
 
 [node name="MockGame" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=382008701]
+visible = false
 layout_mode = 2
 text = "Mock Game (Test)"
 
