@@ -165,3 +165,9 @@ func displayRole(role : String):
 func acknowledge_role():
 	var peer_id = multiplayer.get_remote_sender_id()
 	active_game.acknowledge_role(peer_id)
+	
+
+
+@rpc("authority","call_remote","reliable")
+func switch_client_scene(scene):
+	get_tree().change_scene_to_file(scene)
