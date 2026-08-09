@@ -17,6 +17,8 @@ func _ready():
 	if Lobby.client_state:
 		roleHint.set_role(Lobby.client_state.role)
 		roleHint.visible = true
+	else:
+		roleHint.visible = false
 
 
 func player_disconnected(id : int):

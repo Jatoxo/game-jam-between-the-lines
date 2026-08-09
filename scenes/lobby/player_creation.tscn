@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="12_gtx1d"]
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="12_iwodu"]
 [ext_resource type="Texture2D" uid="uid://s61n4qk3nvdt" path="res://assets/pictures/ava/grey4.png" id="12_tqlhw"]
+[ext_resource type="PackedScene" uid="uid://b7et0eo3sdl17" path="res://scenes/main_menu.tscn" id="12_wtbh4"]
 [ext_resource type="Texture2D" uid="uid://ccmoi2073r1n5" path="res://assets/pictures/ava/ava5.png" id="13_blw2h"]
 [ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="14_bhvu4"]
 [ext_resource type="Texture2D" uid="uid://c3tikum36i7nu" path="res://assets/pictures/ava/grey5.png" id="14_k0yci"]
@@ -51,6 +52,7 @@ grow_vertical = 2
 script = ExtResource("1_6p31b")
 avatar_group = SubResource("ButtonGroup_7tnq7")
 avatar_textures = Array[Texture2D]([ExtResource("5_ik452"), ExtResource("6_be7yk"), ExtResource("9_kaqyt"), ExtResource("11_jqika"), ExtResource("13_blw2h"), ExtResource("15_s3g7q"), ExtResource("17_j28dx"), ExtResource("19_nypon"), ExtResource("21_m40f1"), ExtResource("23_kdb5j")])
+previousScreen = ExtResource("12_wtbh4")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=487899529]
 material = SubResource("ShaderMaterial_iwodu")

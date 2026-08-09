@@ -7,11 +7,32 @@
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="4_sk5xj"]
 [ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="5_tpsuq"]
 [ext_resource type="PackedScene" uid="uid://ct84etd03n5ib" path="res://scenes/lobby/player_list.tscn" id="6_3johv"]
+[ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="8_tpsuq"]
+[ext_resource type="Texture2D" uid="uid://c4llul2bwyod2" path="res://assets/gfx/button_blank.png" id="9_id18a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s0l2t"]
 shader = ExtResource("3_k2vsy")
 shader_parameter/amplitude = 100.0
 shader_parameter/speed = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ruq7f"]
+texture = ExtResource("9_id18a")
+texture_margin_left = 47.0
+texture_margin_top = 65.0
+texture_margin_right = 55.0
+texture_margin_bottom = 50.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpsuq"]
+texture = ExtResource("9_id18a")
+texture_margin_left = 47.0
+texture_margin_top = 65.0
+texture_margin_right = 55.0
+texture_margin_bottom = 50.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.36862746, 0.30588236, 0.45490196, 1)
 
 [node name="HostGame" type="Control" unique_id=941562498]
 layout_mode = 3
@@ -58,12 +79,39 @@ theme_override_font_sizes/font_size = 64
 text = "<- Back"
 flat = true
 
-[node name="PlayerList" parent="." unique_id=1025210436 instance=ExtResource("6_3johv")]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1780064665]
 layout_mode = 1
-offset_left = 35.0
-offset_top = -4.280014
-offset_right = -36.0
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = -1
+anchor_top = 0.16000001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.800018
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerList" parent="VBoxContainer" unique_id=1025210436 instance=ExtResource("6_3johv")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartGame" type="MarginContainer" parent="VBoxContainer" unique_id=135108959]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Button" type="Button" parent="VBoxContainer/StartGame" unique_id=149635527]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.2)
+theme_override_fonts/font = ExtResource("8_tpsuq")
+theme_override_font_sizes/font_size = 82
+theme_override_styles/normal = SubResource("StyleBoxTexture_ruq7f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ruq7f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ruq7f")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tpsuq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ruq7f")
+disabled = true
+text = "Start Game"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartGame/Button" to="." method="_on_button_pressed"]
