@@ -95,7 +95,11 @@ func start_game():
 		return 
 		
 	active_game = CommentGame.new()
+	for peer in multiplayer.get_peers():
+		active_game.playerStates[peer] = {}
+		
 	start_game_client.rpc()
+
 
 @rpc("authority", "call_remote")
 func start_game_client():
@@ -155,3 +159,9 @@ func displayRole(role : String):
 	instance.role_name = role
 	get_tree().change_scene_to_node(instance)
 	
+
+# Client has acknowledged their role
+@rpc("any_peer","call_remote","reliable")
+func acknowledge_role():
+	var peer_id = multiplayer.get_remote_sender_id()
+	active_game.acknowledge_role(peer_id)

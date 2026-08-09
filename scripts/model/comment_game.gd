@@ -17,12 +17,47 @@ const WIN_SCORE = 100
 signal score_changed(score_name: String, new_value: int)
 signal player_won(role: String)
 
+signal new_role_acknowledged(player_id, count, total)
+
 const SCORE_KEY_MAP = {
 	"Constructiveness": "constructiveness",
 	"Factchecker": "factchecker",
 	"Politician": "politician",
 	"Boomer": "boomer"
 }
+
+
+var playerStates : Dictionary = {}
+var available_roles : Array = ["Fact checker","Politician","Boomer", "Conspiracy theorist","Bot","Hater","Fan","Zoomer"]
+
+
+func assignRoles():
+	print("Assigning roles")
+	available_roles.shuffle()
+	
+	for player_id in playerStates:
+		var player = playerStates[player_id]
+		if "role" in player:
+			print("Player %d already has role %s" % [player_id, player["role"]])
+			continue
+			
+		player["role"] = available_roles.pop_back()
+		player["roleAck"] = false
+		print("Player '%d' has been assigned role %s" %[player_id, player["role"]])
+		Lobby.displayRole.rpc_id(player_id, player["role"])
+
+func acknowledge_role(player_id):
+	playerStates[player_id]["roleAck"] = true
+	
+	var total = len(playerStates)
+	var ack_count = 0
+	for player in playerStates:
+		if playerStates[player]["roleAck"]:
+			ack_count += 1
+	
+	new_role_acknowledged.emit(player_id, ack_count, total)
+
+
 
 # Wer sich an wen "anheftet" -> fan_id : target_role (z.B. "factchecker")
 var fan_attachments: Dictionary = {}
