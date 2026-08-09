@@ -24,6 +24,9 @@ func attach_reply(reply_node: Node):
 	$IndentedReplies/RepliesBox.add_child(reply_node)
 	
 func _on_reply_button_pressed() -> void:
-	PlayerData.set_player("anton",2)
-	add_reply(PlayerData.players[0]["username"], "ich bin ein berliner",1 )
+	var blank_node = load("res://scenes/blank_selection.tscn")
+	var blank_instance = blank_node.instantiate()
+	blank_instance.parentID = commentID
+	get_tree().change_scene_to_node(blank_instance)
+	
 	pass

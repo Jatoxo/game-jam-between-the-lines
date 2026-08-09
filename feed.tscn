@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c6l1u0q24y5ml" path="res://scripts/feed.gd" id="1_j7o2i"]
 [ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="1_pvqki"]
-[ext_resource type="Texture2D" uid="uid://d160ds8ukmue4" path="res://assets/pictures/ava/ava1.png" id="2_insad"]
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_n6tdq"]
 [ext_resource type="PackedScene" uid="uid://dgos8chyhwok6" path="res://scenes/comment_root.tscn" id="3_n6tdq"]
 
@@ -19,7 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j7o2i")
-startingAvatar = ExtResource("2_insad")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=57325938]
 material = SubResource("ShaderMaterial_j7o2i")

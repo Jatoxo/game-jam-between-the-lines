@@ -104,16 +104,20 @@ func add_comment(data:Dictionary):
 	pass
 
 @rpc("any_peer")
-func request_add_comment(username: String,avatarID:int,parent_id: String, text: String):
+func request_add_comment(username: String,avatarID:int,parent_id: int, text: String):
 	var comment = Lobby.active_game.add_comment({
-		"parent_id": parent_id,
+		"parentID": parent_id,
 		"username": username,
 		"avatarID": avatarID,
 		"text": text
 	})
-	broadcast_comment.rpc(comment)
+	#broadcast_comment.rpc(comment)
 
 @rpc("authority", "call_local")
 func broadcast_comment(comment: Dictionary):
 	Lobby.active_game.comments[comment["id"]] = comment
 	Lobby.active_game.comment_added.emit(comment)
+
+@rpc("any_peer")
+func request_full_sync():
+	return Lobby.active_game.comments
