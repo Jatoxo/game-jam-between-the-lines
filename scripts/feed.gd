@@ -18,15 +18,14 @@ func _ready() -> void:
 	
 
 func _on_comment_added(comment:Dictionary):
-	var CommentScene = load("res://comment_root.tscn")
+	var CommentScene = load("res://scenes/comment_root.tscn")
 	var node = CommentScene.instantiate()
-	node.comment_id = comment["commentID"]
+	node.commentID = comment["commentID"]
 	node.setup(comment["username"], comment["text"], comment["avatarID"])
 	comment_nodes[comment["commentID"]] = node
 	var parent_id = comment["parentID"]
-	if parent_id == "" or not comment_nodes.has(parent_id):
-		$ScrollContainer/CommentRoot/IndentedReplies/RepliesBox.add_child(node)
-	else:
-		comment_nodes[parent_id].attach_reply(node)
-		
+	#if  not parent_id == 0 :
+	comment_nodes[str(parent_id)].attach_reply(node)
+	#else:
+		#$ScrollContainer/CommentRoot.attach_reply(node)
 		

@@ -32,13 +32,6 @@ texture_margin_bottom = 50.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ea05"]
-bg_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [node name="Control" type="Control" unique_id=1242427106]
 layout_mode = 3
 anchors_preset = 15
@@ -105,15 +98,4 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qagha")
 theme_override_styles/focus = SubResource("StyleBoxTexture_qagha")
 text = "Acknowledge"
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1780404294]
-visible = false
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_2rp8c")
-theme_override_font_sizes/font_size = 54
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ea05")
-text = "Acknowledge"
-
 [connection signal="pressed" from="VBoxContainer/Acknowledge" to="." method="_on_acknowledge_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

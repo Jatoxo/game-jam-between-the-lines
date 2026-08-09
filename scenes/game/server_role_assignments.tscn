@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://caw3uud2hyf56"]
+
+[ext_resource type="Shader" uid="uid://c6q4ty2d18d26" path="res://shaders/main_menu_bg.gdshader" id="1_6wfyx"]
+[ext_resource type="Script" uid="uid://0gcqiqck2c1r" path="res://scripts/game/server_role_assignments.gd" id="1_oi0px"]
+[ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_f86jn"]
+[ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="3_f86jn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi0px"]
+shader = ExtResource("1_6wfyx")
+shader_parameter/amplitude = 100.0
+shader_parameter/speed = 1.0
+
+[node name="ServerRoleAssignments" type="Control" unique_id=1222089121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oi0px")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1609314445]
+material = SubResource("ShaderMaterial_oi0px")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f86jn")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="." unique_id=477376789]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.5
+offset_top = -45.5
+offset_right = 461.5
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f86jn")
+text = "See your role on your devices..."
+
+[node name="Count" type="Label" parent="." unique_id=276257755]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.5
+offset_top = -45.5
+offset_right = 461.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f86jn")
+text = "0/10"
+horizontal_alignment = 1
+vertical_alignment = 1

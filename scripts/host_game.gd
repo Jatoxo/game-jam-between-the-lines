@@ -41,5 +41,8 @@ func on_go_back():
 
 # Start Game button
 func _on_button_pressed() -> void:
-	if Lobby._is_ready_to_start():
-		Lobby.start_game()
+	if not Lobby._is_ready_to_start():
+		return
+	
+	Lobby.start_game()
+	get_tree().change_scene_to_file("res://scenes/game/server_role_assignments.tscn")

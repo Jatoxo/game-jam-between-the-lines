@@ -6,10 +6,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _on_button_pressed() -> void:
-	pass
-	
-
 
 func _on_acknowledge_pressed() -> void:
+	Lobby.acknowledge_role.rpc_id(1)
 	get_tree().change_scene_to_file("res://scenes/idle.tscn")

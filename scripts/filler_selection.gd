@@ -83,5 +83,5 @@ func _on_button_pressed(num : int):
 	print(comment) # rpc_id(1,Lobby.client_username,Lobby.client_avatar_id
 	Lobby.active_game.request_add_comment("uwu", 3, parentID, comment)
 	#print(blank+fillers[num]["text"])
-	get_tree().change_scene_to_file("res://feed.tscn")
+	get_tree().change_scene_to_file("res://scenes/feed.tscn")
 	pass
