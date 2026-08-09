@@ -11,7 +11,6 @@ func _ready() -> void:
 		Lobby.active_game.new_role_acknowledged.connect(role_acknowledged)
 
 
-
 func role_acknowledged(player_id, count, total):
 	print("New ack came in: %d" % player_id)
 	print("%d / %d" % [count, total])
@@ -20,4 +19,7 @@ func role_acknowledged(player_id, count, total):
 	
 	if(count == total):
 		await get_tree().create_timer(1).timeout
-		pass
+		get_tree().change_scene_to_file("res://scenes/feed.tscn")
+		print("Trying to switch client scene")
+		Lobby.switch_client_scene.rpc("res://scenes/feed.tscn")
+		
