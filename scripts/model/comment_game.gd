@@ -33,6 +33,8 @@ var available_roles : Array = ["Fact checker","Politician","Boomer", "Conspiracy
 
 func assignRoles():
 	print("Assigning roles")
+	
+	randomize()
 	available_roles.shuffle()
 	
 	for player_id in playerStates:
