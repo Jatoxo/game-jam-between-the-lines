@@ -6,7 +6,42 @@ var fillers = ResourceGlobal.fillers
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#$VBoxContainer/MarginContainer/PanelContainer.add_theme_style_override("modulate_color",Color.GREEN)
-	$VBoxContainer/MarginContainer/PanelContainer/RichTextLabel.text = blank 
+	#$VBoxContainer/MarginContainer/PanelContainer/RichTextLabel.text = blank 
+	if Global.pending_comment != null:
+		var data = Global.pending_comment
+		blank = data["blank"]
+		var panel = $VBoxContainer/MarginContainer/PanelContainer
+		var label = panel.get_node("RichTextLabel")
+		
+		label.text = blank
+		
+		var new_style = StyleBoxFlat.new()
+		
+		# Sanftere Farbe statt reinem Color.GREEN
+		new_style.bg_color = Color(0.75, 0.92, 0.78)  # pastelliges Grün
+		
+		# Abgerundete Ecken für den "Sprechblasen"-Look
+		new_style.corner_radius_top_left = 16
+		new_style.corner_radius_top_right = 16
+		new_style.corner_radius_bottom_left = 16
+		new_style.corner_radius_bottom_right = 16
+		
+		# Innenabstand, damit der Text nicht am Rand klebt
+		new_style.content_margin_left = 16
+		new_style.content_margin_right = 16
+		new_style.content_margin_top = 10
+		new_style.content_margin_bottom = 10
+		
+		new_style.border_width_left = 2
+		new_style.border_width_right = 2
+		new_style.border_width_top = 2
+		new_style.border_width_bottom = 2
+		new_style.border_color = Color(0.55, 0.8, 0.6)
+	
+										 
+		panel.add_theme_stylebox_override("panel", new_style)
+		Global.pending_comment = null
+	
 	for i in 2:
 		var scene = load("res://scenes/comment_card.tscn")
 		var instance = scene.instantiate()
@@ -39,6 +74,8 @@ func _on_button_pressed(num : int):
 		text2 += blank[x]
 		x += 1
 	var comment = text1 + " " + fillers[num]["text"] + text2
+	
+	Global.game.apply_comment(fillers[num])
 	print(comment)
 	#print(blank+fillers[num]["text"])
 	pass
