@@ -138,7 +138,8 @@ func add_comment(data:Dictionary):
 		"parentID" : data["parentID"]
 	}
 	comments[id] = comment
-	pass
+	
+	return comment
 
 """
 func request_full_sync():
