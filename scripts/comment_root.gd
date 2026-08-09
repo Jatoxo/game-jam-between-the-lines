@@ -1,16 +1,16 @@
 extends VBoxContainer # Comment
-@onready var username_label = $Comment/ContentBox/Header/Username
-@onready var text_box = $Comment/ContentBox/MarginContainer/Text
-@onready var avatar_box = $Comment/ContentBox/Header/Avatar
+var username_label = "Comment/ContentBox/Header/Username"
+var text_box = "Comment/ContentBox/MarginContainer/Text"
+var avatar_box = "Comment/ContentBox/Header/Avatar"
 @onready var replies_box = $IndentedReplies/RepliesBox
 var commentID : int
 var texture = load("res://icon.svg")
 var author : int
 
 func setup(username:String,text:String,avatarID:int):
-	username_label.text = username
-	text_box.text = text
-	avatar_box.texture = PlayerData.get_avatar_texture(avatarID)
+	get_node(username_label).text = username
+	get_node(text_box).text = text
+	get_node(avatar_box).texture = PlayerData.get_avatar_texture(avatarID)
 	
 
 func add_reply(username:String,text:String,avatarID:int):
