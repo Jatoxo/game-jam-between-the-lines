@@ -182,7 +182,7 @@ func request_add_comment(username: String,avatarID:int,parent_id: int, text: Str
 
 @rpc("authority", "call_local")
 func broadcast_comment(comment: Dictionary):
-	Lobby.active_game.comments[comment["id"]] = comment
+	Lobby.active_game.comments[comment["commentID"]] = comment
 	Lobby.active_game.comment_added.emit(comment)
 
 @rpc("authority")
