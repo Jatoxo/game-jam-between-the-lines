@@ -14,7 +14,9 @@ func _ready() -> void:
 	root_node.setup(startingUser, startingText, startingAvatar)
 
 	Lobby.active_game.comment_added.connect(_on_comment_added)
+	Lobby.active_game.request_full_sync()
 	
+
 func _on_comment_added(comment:Dictionary):
 	var CommentScene = load("res://comment_root.tscn")
 	var node = CommentScene.instantiate()

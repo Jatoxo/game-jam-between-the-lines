@@ -1,6 +1,6 @@
 extends Control
 
-
+var parentID : int
 var blanks = ResourceGlobal.blanks
 
 func _ready() -> void:
@@ -22,7 +22,8 @@ func generateBlanks():
 func _on_button_pressed(num : int):
 	Global.pending_comment = {
 		"blank": blanks[num],
-		"color": Color.GREEN
+		"color": Color.GREEN,
+		"parentID":parentID
 	}
 	get_tree().change_scene_to_file("res://scenes/filler_selection.tscn")
 	

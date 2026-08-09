@@ -2,7 +2,7 @@ extends Control
 
 var blank : String
 var fillers = ResourceGlobal.fillers
-
+var parentID :int = Global.pending_comment["parentID"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#$VBoxContainer/MarginContainer/PanelContainer.add_theme_style_override("modulate_color",Color.GREEN)
@@ -80,6 +80,8 @@ func _on_button_pressed(num : int):
 	var comment = text1 + " " + fillers[num]["text"] + text2
 	
 	Lobby.active_game.apply_comment(fillers[num])
-	print(comment)
+	print(comment) # rpc_id(1,Lobby.client_username,Lobby.client_avatar_id
+	Lobby.active_game.request_add_comment("uwu", 3, parentID, comment)
 	#print(blank+fillers[num]["text"])
+	get_tree().change_scene_to_file("res://feed.tscn")
 	pass
