@@ -63,6 +63,10 @@ func generateFillers():
 		node.text = fillers[i]["text"]
 
 func _on_button_pressed(num : int):
+	if MockServer.active:
+		MockServer.submit_player_comment(blank, fillers[num])
+		get_tree().change_scene_to_file("res://scenes/mock_comments.tscn")
+		return
 	var text1 = ""
 	var text2 = ""
 	var x = 0

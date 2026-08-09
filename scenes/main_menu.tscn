@@ -93,5 +93,10 @@ size_flags_vertical = 3
 texture_normal = ExtResource("2_wu84c")
 stretch_mode = 5
 
+[node name="MockGame" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=382008701]
+layout_mode = 2
+text = "Mock Game (Test)"
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/JoinGame" to="." method="_on_join_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/CreateGame" to="." method="_on_create_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MockGame" to="." method="_on_mock_game_pressed"]
