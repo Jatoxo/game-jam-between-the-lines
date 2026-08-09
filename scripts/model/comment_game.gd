@@ -81,4 +81,39 @@ func _check_win(score_name: String) -> void:
 	if get(score_name) >= WIN_SCORE:
 		player_won.emit(score_name)
 
-	
+#Comment Memory
+
+signal comment_added(comment:Dictionary)
+var comments : Dictionary = {}
+var next_id = 0
+func _generate_id() -> String:
+	next_id += 1
+	return str(next_id)
+
+func add_comment(data:Dictionary):
+	var comment : Dictionary
+	var id = _generate_id()
+	comment = {
+		"username":data["username"],
+		"avatarID":data["avatarID"],
+		"text":data["text"],
+		"commentID" : id,
+		"parentID" : data["parentID"]
+	}
+	comments[id] = comment
+	pass
+
+@rpc("any_peer")
+func request_add_comment(username: String,avatarID:int,parent_id: String, text: String):
+	var comment = Lobby.active_game.add_comment({
+		"parent_id": parent_id,
+		"username": username,
+		"avatarID": avatarID,
+		"text": text
+	})
+	broadcast_comment.rpc(comment)
+
+@rpc("authority", "call_local")
+func broadcast_comment(comment: Dictionary):
+	Lobby.active_game.comments[comment["id"]] = comment
+	Lobby.active_game.comment_added.emit(comment)
