@@ -20,6 +20,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 
 func _on_submit_pressed() -> void:
 	username = $VBoxContainer/UsernameInput.text
+	username = username.strip_edges()
+	
+	if len(username) == 0 or get_selected_avatar() == 0:
+		return
 	
 	PlayerData.set_player.rpc_id(1,username,get_selected_avatar())
 	Lobby.client_avatar_id = get_selected_avatar()
