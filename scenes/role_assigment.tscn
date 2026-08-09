@@ -4,14 +4,40 @@
 [ext_resource type="Script" uid="uid://dmp6kd5kkibua" path="res://scripts/role_assigment.gd" id="1_28xmw"]
 [ext_resource type="Texture2D" uid="uid://bvst2wq3teovh" path="res://assets/pictures/main_menu/background_square.png" id="2_28xmw"]
 [ext_resource type="PackedScene" uid="uid://ch0o5ukuohcmx" path="res://scenes/role.tscn" id="3_2rp8c"]
+[ext_resource type="FontFile" uid="uid://db2eqilhv8fay" path="res://assets/font/Jersey10-Regular.ttf" id="5_2rp8c"]
+[ext_resource type="PackedScene" uid="uid://b5vgeyb8d1wut" path="res://scenes/util/drag_button.tscn" id="5_xxkr5"]
+[ext_resource type="Texture2D" uid="uid://c4llul2bwyod2" path="res://assets/gfx/button_blank.png" id="6_40d1h"]
+[ext_resource type="Texture2D" uid="uid://codvpppteoixa" path="res://assets/gfx/button_blank_pressed.png" id="7_qagha"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_40d1h"]
 shader = ExtResource("1_3uy6e")
 shader_parameter/amplitude = 10.0
 shader_parameter/speed = 1.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxkr5"]
+texture = ExtResource("6_40d1h")
+texture_margin_left = 47.0
+texture_margin_top = 65.0
+texture_margin_right = 55.0
+texture_margin_bottom = 50.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qagha"]
+texture = ExtResource("7_qagha")
+texture_margin_left = 47.0
+texture_margin_top = 65.0
+texture_margin_right = 55.0
+texture_margin_bottom = 50.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ea05"]
 bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Control" type="Control" unique_id=1242427106]
 layout_mode = 3
@@ -39,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = -399.0
-offset_right = 46.0
-offset_bottom = 80.0
+offset_left = -516.0
+offset_top = -457.5
+offset_right = 106.49994
+offset_bottom = 138.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
@@ -54,12 +80,40 @@ layout_mode = 2
 [node name="Role" parent="VBoxContainer/CenterContainer" unique_id=699662842 instance=ExtResource("3_2rp8c")]
 layout_mode = 2
 
+[node name="DragButton" parent="VBoxContainer/CenterContainer/Role" unique_id=1707471602 node_paths=PackedStringArray("moves", "snapBack") instance=ExtResource("5_xxkr5")]
+layout_mode = 1
+offset_left = -148.49997
+offset_top = -197.81248
+offset_right = 145.00003
+offset_bottom = 201.18752
+moves = NodePath("..")
+snapBack = NodePath("../../Snapback")
+snapDelay = 0.0
+
+[node name="Snapback" type="Control" parent="VBoxContainer/CenterContainer" unique_id=1728126825]
+layout_mode = 2
+
+[node name="Acknowledge" type="Button" parent="VBoxContainer" unique_id=661787355]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_2rp8c")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxTexture_xxkr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qagha")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qagha")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qagha")
+text = "Acknowledge"
+
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1780404294]
+visible = false
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("5_2rp8c")
+theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ea05")
 text = "Acknowledge"
 
+[connection signal="pressed" from="VBoxContainer/Acknowledge" to="." method="_on_acknowledge_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

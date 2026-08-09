@@ -2,6 +2,7 @@ extends TextureButton
 
 @export var moves : Node
 @export var snapBack : Node
+@export var snapDelay : float = 1.5
 
 var dragging = false
 var drag_offset : Vector2
@@ -12,7 +13,9 @@ var drag_offset : Vector2
 func _ready() -> void:
 	connect("button_down", _on_button_button_down)
 	connect("button_up", _on_button_button_up)
-	pass # Replace with function body.
+	
+	if snapDelay > 0:
+		timer.wait_time = snapDelay
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,12 +31,16 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
-	timer.start()
+	
+	if snapDelay > 0:
+		timer.start()
+	else:
+		_on_timer_timeout()
 
 
 func _on_timer_timeout() -> void:
 	if snapBack:
 		var tween = create_tween()
-		tween.set_trans(Tween.TRANS_ELASTIC)
+		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(moves, "global_position", snapBack.global_position, 0.8)
+		tween.tween_property(moves, "global_position", snapBack.global_position, 0.5)

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7et0eo3sdl17" path="res://scenes/main_menu.tscn" id="2_oftay"]
 [ext_resource type="PackedScene" uid="uid://bdcbw41pnvqp5" path="res://scenes/lobby/player_slot.tscn" id="5_26x5l"]
 [ext_resource type="PackedScene" uid="uid://ch0o5ukuohcmx" path="res://scenes/role.tscn" id="6_xrgtl"]
-[ext_resource type="Script" uid="uid://dgr74gbmklbjt" path="res://scripts/util/drag_button.gd" id="7_62v2e"]
+[ext_resource type="PackedScene" uid="uid://b5vgeyb8d1wut" path="res://scenes/util/drag_button.tscn" id="7_62v2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oftay"]
 shader = ExtResource("1_5cokq")
@@ -58,22 +58,17 @@ grow_vertical = 0
 scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
-[node name="TextureButton" type="TextureButton" parent="Role" unique_id=1026688186 node_paths=PackedStringArray("moves", "snapBack")]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = -146.5
-offset_top = -198.0
-offset_right = 147.0
-offset_bottom = 201.0
-grow_vertical = 2
-script = ExtResource("7_62v2e")
+[node name="TextureButton" parent="Role" unique_id=1707471602 node_paths=PackedStringArray("moves", "snapBack") instance=ExtResource("7_62v2e")]
+layout_mode = 0
+anchors_preset = 0
+anchor_bottom = 0.0
+offset_left = -148.0
+offset_top = -201.5
+offset_right = 145.5
+offset_bottom = 197.5
+grow_vertical = 1
 moves = NodePath("..")
 snapBack = NodePath("../../CardPos")
-
-[node name="Timer" type="Timer" parent="Role/TextureButton" unique_id=808344919]
-wait_time = 1.5
-one_shot = true
 
 [node name="CardPos" type="Control" parent="." unique_id=1678994671]
 layout_mode = 1
@@ -88,5 +83,3 @@ offset_right = 47.0
 offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[connection signal="timeout" from="Role/TextureButton/Timer" to="Role/TextureButton" method="_on_timer_timeout"]
