@@ -160,6 +160,7 @@ func displayRole(role : String):
 	get_tree().change_scene_to_node(instance)
 	
 
+
 # Client has acknowledged their role
 @rpc("any_peer","call_remote","reliable")
 func acknowledge_role():
@@ -171,3 +172,8 @@ func acknowledge_role():
 @rpc("authority","call_remote","reliable")
 func switch_client_scene(scene):
 	get_tree().change_scene_to_file(scene)
+
+@rpc("any_peer")
+func request_full_sync():
+	var sender_id = multiplayer.get_remote_sender_id()
+	Lobby.active_game.send_full_feed.rpc_id(sender_id, Lobby.active_game.comments)

@@ -33,6 +33,8 @@ var available_roles : Array = ["Fact checker","Politician","Boomer", "Conspiracy
 
 func assignRoles():
 	print("Assigning roles")
+	
+	randomize()
 	available_roles.shuffle()
 	
 	for player_id in playerStates:
@@ -146,16 +148,27 @@ func request_add_comment(username: String,avatarID:int,parent_id: int, text: Str
 		"avatarID": avatarID,
 		"text": text
 	})
-	#broadcast_comment.rpc(comment)
+	broadcast_comment.rpc(comment)
 
 @rpc("authority", "call_local")
 func broadcast_comment(comment: Dictionary):
 	Lobby.active_game.comments[comment["id"]] = comment
 	Lobby.active_game.comment_added.emit(comment)
 
-@rpc("any_peer")
+@rpc("authority")
+func send_full_feed(all_comments: Dictionary):
+	# runs ONLY on the client who asked
+	var ids = all_comments.keys()
+	ids.sort_custom(func(a, b): return int(a) < int(b))  # parent-before-child order
+	for id in ids:
+		if comments.has(id):
+			continue
+		comments[id] = all_comments[id]
+		comment_added.emit(all_comments[id])
+"""
 func request_full_sync():
 	var ids = comments.keys()
 	ids.sort_custom(func(a, b): return int(a) < int(b))  # keep parent-before-child order
 	for id in ids:
 		comment_added.emit(comments[id])
+"""
