@@ -155,4 +155,7 @@ func broadcast_comment(comment: Dictionary):
 
 @rpc("any_peer")
 func request_full_sync():
-	return Lobby.active_game.comments
+	var ids = comments.keys()
+	ids.sort_custom(func(a, b): return int(a) < int(b))  # keep parent-before-child order
+	for id in ids:
+		comment_added.emit(comments[id])
