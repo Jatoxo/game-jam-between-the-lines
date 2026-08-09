@@ -14,7 +14,7 @@ func _ready() -> void:
 	root_node.setup(startingUser, startingText, startingAvatar)
 
 	Lobby.active_game.comment_added.connect(_on_comment_added)
-	Lobby.active_game.request_full_sync()
+	Lobby.request_full_sync.rpc_id(1)
 	
 
 func _on_comment_added(comment:Dictionary):
