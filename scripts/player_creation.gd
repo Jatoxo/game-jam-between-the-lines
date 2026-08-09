@@ -1,4 +1,7 @@
-extends Control #PlayerCreation
+
+extends "res://scripts/ui_screen.gd"
+
+
 @export var avatar_size: int = 150
 @export var avatar_group: ButtonGroup
 @export var avatar_textures: Array[Texture2D]  # index-matched to buttons
@@ -33,5 +36,6 @@ func _on_submit_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/idle.tscn")
 		pass
 
-
-	
+# Leave lobby
+func on_go_back():
+	Lobby.remove_multiplayer_peer()
