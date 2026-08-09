@@ -77,7 +77,7 @@ func _on_button_pressed(num : int):
 	
 	Lobby.active_game.apply_comment(fillers[num])
 	print(comment) # rpc_id(1,Lobby.client_username,Lobby.client_avatar_id
-	Lobby.active_game.request_add_comment("uwu", 3, parentID, comment)
+	Lobby.active_game.request_add_comment.rpc_id(1,Lobby.client_username,Lobby.client_avatar_id, parentID, comment)
 	#print(blank+fillers[num]["text"])
 	get_tree().change_scene_to_file("res://scenes/feed.tscn")
 	pass
