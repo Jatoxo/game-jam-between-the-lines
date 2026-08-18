@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpin3q6t3so27" path="res://assets/pictures/main_menu/join_game.png" id="3_8ln24"]
 [ext_resource type="Shader" uid="uid://cd25vu6jb1xyd" path="res://shaders/main_menu.gdshader" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://t8fuoq4ij0vo" path="res://assets/pictures/main_menu/settings.png" id="6_rtw2f"]
+[ext_resource type="Theme" uid="uid://b2a8he2543vh6" path="res://themes/Default Theme.tres" id="7_jk1qb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_26dvx"]
 shader = ExtResource("2_tbmy8")
@@ -19,13 +20,19 @@ shader = ExtResource("3_oa1go")
 shader_parameter/amplitude = 10.0
 shader_parameter/speed = 2.0
 
-[node name="MainMenu" type="Node2D" unique_id=1494809658]
+[node name="Main Menu" type="Control" unique_id=1882031671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_jk1qb")
 script = ExtResource("1_rtw2f")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1446767467]
-
-[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1386822807]
+[node name="Background" type="TextureRect" parent="." unique_id=1386822807]
 material = SubResource("ShaderMaterial_26dvx")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,9 +40,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_wu84c")
 expand_mode = 3
-metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1149003795]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1149003795]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,13 +53,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 
-[node name="CenterPiece" type="TextureRect" parent="CanvasLayer/MarginContainer" unique_id=196050010]
+[node name="CenterPiece" type="TextureRect" parent="MarginContainer" unique_id=196050010]
 material = SubResource("ShaderMaterial_rtw2f")
 layout_mode = 2
 texture = ExtResource("2_8ln24")
 stretch_mode = 5
 
-[node name="Settings" type="MarginContainer" parent="CanvasLayer" unique_id=1068397380]
+[node name="Settings" type="MarginContainer" parent="." unique_id=1068397380]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -65,39 +73,39 @@ grow_vertical = 0
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Settings" unique_id=702791088]
+[node name="TextureButton" type="TextureButton" parent="Settings" unique_id=702791088]
 layout_mode = 2
 texture_normal = ExtResource("6_rtw2f")
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1164344509]
-anchors_preset = 15
-anchor_right = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1164344509]
+layout_mode = 1
+anchors_preset = -1
 anchor_bottom = 1.0
-offset_top = 38.0
-offset_right = -211.0
-offset_bottom = -207.0
-grow_horizontal = 2
+offset_right = 775.0
 grow_vertical = 2
-alignment = 1
+theme = ExtResource("7_jk1qb")
 
-[node name="JoinGame" type="TextureButton" parent="CanvasLayer/VBoxContainer" unique_id=1049095381]
+[node name="JoinGame" type="TextureButton" parent="VBoxContainer" unique_id=1049095381]
+custom_maximum_size = Vector2(800, 420)
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_8ln24")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CreateGame" type="TextureButton" parent="CanvasLayer/VBoxContainer" unique_id=1246312163]
+[node name="CreateGame" type="TextureButton" parent="VBoxContainer" unique_id=1246312163]
+custom_maximum_size = Vector2(800, 420)
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_wu84c")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MockGame" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=382008701]
+[node name="MockGame" type="Button" parent="VBoxContainer" unique_id=382008701]
 visible = false
 layout_mode = 2
 text = "Mock Game (Test)"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/JoinGame" to="." method="_on_join_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreateGame" to="." method="_on_create_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MockGame" to="." method="_on_mock_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/JoinGame" to="." method="_on_join_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreateGame" to="." method="_on_create_game_pressed"]
