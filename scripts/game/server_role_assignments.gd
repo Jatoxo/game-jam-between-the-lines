@@ -18,7 +18,7 @@ func role_acknowledged(player_id, count, total):
 	ack_counter.text = "%d / %d" % [count, total]
 	
 	if(count == total):
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/feed.tscn")
 		print("Trying to switch client scene")
 		Lobby.switch_client_scene.rpc("res://scenes/feed.tscn")
