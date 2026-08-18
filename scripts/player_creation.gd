@@ -9,6 +9,14 @@ var username : String
 var role : String
 
 
+@onready var avatarGrid : GridContainer = $VBoxContainer/GridContainer
+
+func _process(delta: float) -> void:
+	if avatarGrid.size.x > avatarGrid.size.y:
+		avatarGrid.columns = len(avatarGrid.get_children()) / 2
+	else:
+		avatarGrid.columns = 2
+
 func get_selected_avatar() -> int:
 	var pressed_button = avatar_group.get_pressed_button()
 	if pressed_button == null:
