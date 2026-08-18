@@ -1,4 +1,4 @@
-extends "res://scripts/ui_screen.gd"
+extends GameScene
 
 @onready
 var playerHint : PlayerSlot = $PanelContainer

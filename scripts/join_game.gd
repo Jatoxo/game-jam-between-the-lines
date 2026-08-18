@@ -1,4 +1,4 @@
-extends "res://scripts/ui_screen.gd"
+extends GameScene
 
 @onready var entryField = $IPEntry
 @onready var errorLabel = $ErrorLabel
@@ -12,7 +12,7 @@ func _ready():
 func peer_connected(id, info):
 	if(id == 1):
 		print("Connected to server!")
-		get_tree().change_scene_to_file("res://scenes/lobby/player_creation.tscn")
+		change_scene("res://scenes/lobby/player_creation.tscn")
 
 # "join" button
 func _on_button_pressed() -> void:

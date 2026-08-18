@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2scgkmxomvy1"]
+
+[ext_resource type="AudioStream" uid="uid://bnvafomqcssso" path="res://assets/sfx/music/TimeToThink - The Mnk.mp3" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://d0l1c8l3n4qmk" path="res://scripts/game_manager.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://b7et0eo3sdl17" path="res://scenes/main_menu.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://bfkhbmgprvvob" path="res://scripts/scene_manager.gd" id="3_jyhfs"]
+
+[node name="CommentGame" type="Node" unique_id=1346992493 node_paths=PackedStringArray("scene_manager")]
+script = ExtResource("1_sugp2")
+scene_manager = NodePath("SceneManager")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1601934532]
+stream = ExtResource("1_o5qli")
+volume_db = -8.0
+autoplay = true
+
+[node name="SceneManager" type="Node" parent="." unique_id=1421313296]
+script = ExtResource("3_jyhfs")
+
+[node name="SceneStack" type="Node" parent="SceneManager" unique_id=1352348488]
+
+[node name="MainMenu" parent="SceneManager/SceneStack" unique_id=1494809658 instance=ExtResource("2_0wfyh")]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Jam Between The Lines"
-run/main_scene="uid://b7et0eo3sdl17"
+run/main_scene="uid://d2scgkmxomvy1"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/show_image=false

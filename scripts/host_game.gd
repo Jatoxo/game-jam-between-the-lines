@@ -1,4 +1,4 @@
-extends "res://scripts/ui_screen.gd"
+extends GameScene
 
 
 @export var placeholderPlayerIcon : Texture2D
