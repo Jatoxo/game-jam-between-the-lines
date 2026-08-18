@@ -40,6 +40,8 @@ func _ready():
 
 
 func join_game(address = "", port : int = -1):
+	print("Connecting to %s:%s" % [address, port])
+	
 	if address.is_empty():
 		address = DEFAULT_SERVER_IP
 	if port == -1:

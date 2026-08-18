@@ -22,6 +22,19 @@ texture_margin_bottom = 50.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mf2tb"]
+load_path = "res://.godot/imported/button_blank.png-d2ca9f6f8bf80a93ccf7e13b12a4b36f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0yfv"]
+texture = SubResource("CompressedTexture2D_mf2tb")
+texture_margin_left = 47.0
+texture_margin_top = 65.0
+texture_margin_right = 55.0
+texture_margin_bottom = 50.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.36862746, 0.30588236, 0.45490196, 1)
+
 [node name="JoinGame" type="Control" unique_id=1527602212]
 layout_mode = 3
 anchors_preset = 15
@@ -56,12 +69,15 @@ offset_right = 193.0
 offset_bottom = 219.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.2)
 theme_override_fonts/font = ExtResource("3_dh262")
 theme_override_font_sizes/font_size = 82
 theme_override_styles/normal = SubResource("StyleBoxTexture_dh84t")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dh84t")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dh84t")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y0yfv")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dh84t")
+disabled = true
 text = "Join"
 
 [node name="Title" type="Label" parent="." unique_id=1825544027]
@@ -130,5 +146,7 @@ wait_time = 3.0
 one_shot = true
 
 [connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="IPEntry" to="." method="_on_ip_entry_text_changed"]
+[connection signal="text_submitted" from="IPEntry" to="." method="_on_ip_entry_text_submitted"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="ErrorLabel/Timer" to="." method="_on_timer_timeout"]
